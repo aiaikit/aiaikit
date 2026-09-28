@@ -1,0 +1,31 @@
+# aiaikit 静态检查配置
+#
+# 启用聚焦"正确性 + 一致性"的 linter 子集，避免风格偏好争议。
+# 见 specs/001-go-cli-bootstrap/research.md 决策 D-006。
+
+run:
+  tests: true
+  timeout: 5m
+
+linters:
+  disable-all: true
+  enable:
+    - govet
+    - errcheck
+    - staticcheck
+    - unused
+    - gofmt
+    - goimports
+
+issues:
+  # 默认排除：仅排除与本阶段无关的规则；
+  # 后续阶段套用同一配置时如需新豁免，必须在 PR 中显式说明。
+  exclude-default: false
+  max-issues-per-linter: 0
+  max-same-issues: 0
+
+  exclude-rules:
+    # 测试文件允许使用 t.Fatal / t.Errorf 等"未检查错误"模式。
+    - path: _test\.go
+      linters:
+        - errcheck

@@ -1,0 +1,21 @@
+aiaikit —— 基于 Go 的 AI/SDD 工具生态平台 CLI
+
+Usage:
+  aiaikit [flags]
+  aiaikit [command]
+
+Available Commands:
+  completion  生成 shell 自动补全脚本
+  help        查看任意命令的帮助
+  init        初始化 aiaikit 工作区 （预留 / 未实现）
+  plugin      插件管理 （预留 / 未实现）
+  runtime     Spec-Kit Runtime 管理 （预留 / 未实现）
+  update      升级 aiaikit 自身 （预留 / 未实现）
+  version     查看 aiaikit 版本信息
+  web         Web 管理中心 （预留 / 未实现）
+
+Flags:
+  -h, --help      help for aiaikit
+  -v, --version   查看版本信息
+
+Use "aiaikit [command] --help" for more information about a command.
